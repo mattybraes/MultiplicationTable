@@ -31,6 +31,13 @@ class MultiplicationTable : AppCompatActivity() {
         // convert the table into an integer that is not nullable
         val tableNumber = tableString!!.toInt()
 
+        //display the heading in order to see the value in action
+        val multiplicationTable = findViewById<TextView>(
+                                 R.id.multiplicationTableTextView)
+
+        //start with the heading and add two new lines 
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
