@@ -29,7 +29,7 @@ class MultiplicationTable : AppCompatActivity() {
         multiplicationTable.text = "$tableNumber x table"
 
         // convert the table into an integer that is not nullable
-        val tableNumber = tableString!!.toInt()
+        var tableNumber = tableString!!.toInt()
 
         //display the heading in order to see the value in action
         val multiplicationTable = findViewById<TextView>(
@@ -49,8 +49,21 @@ class MultiplicationTable : AppCompatActivity() {
         var counter = 1
         while (counter <=10) {  //check the control variable
             val answer = tableNumber * counter
-            tableNumber += "$tableNumber x $counter = ${answer}\n"  
+            tableNumber += "$tableNumber x $counter = ${answer}\n"
 
+            // declare the control variable
+
+            var counter = 1
+            while (counter <=10) { //check the control variable
+                //skip 3
+                if (counter == 3) {
+                    counter++
+                    continue
+                }
+
+                val answer = tableNumber * counter
+                tableDisplay += "$tableNumber x $counter =  ${answer}\n"
+                counter++           //update the control variable
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
