@@ -1,5 +1,6 @@
 package com.example.multtable
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -12,9 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val multButton = findViewById<Button>(R.id.multButton)
-        multButton.setOnClickListener {
-            // create the explicte intent
+        val multiplyButton = findViewById<Button>(R.id.multiplyButton)
+        multiplyButton.setOnClickListener {
+            // create the explicit content
+            val intent = Intent(this, MultiplicationTable::class.java)
+            //start the activity
+            startActivity(intent)
+
+
         }
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
